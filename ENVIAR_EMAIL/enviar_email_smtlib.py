@@ -21,7 +21,7 @@ ventana.config(bd=10)
 Label(ventana, text="ENVIAR CORREO VIA GMAIL",fg="black",font=("Arial", 15,"bold"),padx=5,pady=5).grid(row=0,column=0,columnspan=2)
 
 #Imagen GMAIL
-imagen_gmail=Image.open("D:/EIGHTA/PYTHON-TKINTER/ENVIAR_EMAIL/logo_gmail.png")
+imagen_gmail=Image.open("logo_gmail.png")#
 nueva_imagen=imagen_gmail.resize((125,84))
 render=ImageTk.PhotoImage(nueva_imagen)
 label_imagen= Label(ventana, image= render)
@@ -32,8 +32,8 @@ label_imagen.grid(row=1,column=0,columnspan=2)
 destinatario=StringVar(ventana)
 asunto=StringVar(ventana)
 
-Label(ventana, text="Mi correo: luisochoa.1495@gmail.com",fg="white",bg="blue",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=2,column=0,columnspan=2,pady=5)
-
+Label(ventana, text="Mi correo: marianelagarabito3@gmail.com",fg="white",bg="blue",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=2,column=0,columnspan=2,pady=5)
+#
 Label(ventana, text="Destinatario:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=3,column=0)
 Entry(ventana,textvariable=destinatario, width=34).grid(row=3,column=1)
 
@@ -48,7 +48,7 @@ mensaje.config(font=("Arial", 9),padx=5, pady=5)
 
 "------------ENVIO DE CORREO------------"
 def enviar_email():
-    remitente = "luisochoa.1495@gmail.com"
+    remitente = "marianelagarabito3@gmail.com"#
     #Estrutura de email
     email = EmailMessage()
     email["From"] = remitente
