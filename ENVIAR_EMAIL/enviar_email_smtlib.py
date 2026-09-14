@@ -32,18 +32,30 @@ label_imagen.grid(row=1,column=0,columnspan=2)
 destinatario=StringVar(ventana)
 asunto=StringVar(ventana)
 
-Label(ventana, text="Mi correo: marianelagarabito3@gmail.com",fg="white",bg="blue",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=2,column=0,columnspan=2,pady=5)
-#
+opciones_destinatarios =[
+    "Seleccionar destinatario",
+    "marianelagarabito3@gmail.com",
+    "juliaavalos997@gmail.com",
+    "fjcoronati@gmail.com",
+    "Mfedullo@gmail.com",
+    ]
+
 Label(ventana, text="Destinatario:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=3,column=0)
-Entry(ventana,textvariable=destinatario, width=34).grid(row=3,column=1)
 
-Label(ventana, text="Asunto:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=4,column=0)
-Entry(ventana,textvariable=asunto, width=34).grid(row=4,column=1)
+OptionMenu(ventana, destinatario, *opciones_destinatarios).grid(row=3,column=1)
 
-Label(ventana, text="Mensaje:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=5,column=0)
+Label(ventana, text="Otro correo:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=4,column=0)
+Entry(ventana,textvariable=destinatario, width=34).grid(row=4,column=1)
+
+Label(ventana, text="Asunto:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=5,column=0)
+Entry(ventana,textvariable=asunto, width=34).grid(row=5,column=1)
+
+Label(ventana, text="Mensaje:",fg="black",font=("Arial", 10,"bold"),padx=5,pady=5).grid(row=6,column=0)
+
 mensaje=Text(ventana,height=5,width=28,padx=5,pady=5)
-mensaje.grid(row=5,column=1)
-mensaje.config(font=("Arial", 9),padx=5, pady=5)
+mensaje.grid(row=6,column=1)
+mensaje.config(font=("Arial", 9),padx=5,pady=5)
+
 
 
 "------------ENVIO DE CORREO------------"
@@ -63,6 +75,6 @@ def enviar_email():
     smtp.quit()
 
 "------------BOTON------------"
-Button(ventana,text="ENVIAR",command=enviar_email,height=2,width=10,bg="black",fg="white",font=("Arial", 10,"bold")).grid(row=6,column=0,columnspan=2,padx=5,pady=10)
+Button(ventana,text="ENVIAR",command=enviar_email,height=2,width=10,bg="black",fg="white",font=("Arial", 10,"bold")).grid(row=7,column=0,columnspan=2,padx=5,pady=10)
 
 ventana.mainloop()
