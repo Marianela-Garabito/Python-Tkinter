@@ -21,8 +21,8 @@ ventana.config(bd=10)
 Label(ventana, text="ENVIAR CORREO VIA GMAIL",fg="black",font=("Arial", 15,"bold"),padx=5,pady=5).grid(row=0,column=0,columnspan=2)
 
 #Imagen GMAIL
-imagen_gmail=Image.open("logo_gmail.png")#
-nueva_imagen=imagen_gmail.resize((125,84))
+imagen_gmail=Image.open("naranja.jpg")#
+nueva_imagen=imagen_gmail.resize((110,84))
 render=ImageTk.PhotoImage(nueva_imagen)
 label_imagen= Label(ventana, image= render)
 label_imagen.image=render
